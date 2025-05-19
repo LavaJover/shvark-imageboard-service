@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+option go_package = "github.com/LavaJover/shvark-imageboard-service/proto/gen;imagepb";
+
+import "google/protobuf/field_mask.proto";
+
+service ImageService {
+    rpc CreateImage (CreateImageRequest) returns (CreateImageResponse);
+    rpc UpdateImage (UpdateImageRequest) returns (UpdateImageResponse);
+    rpc GetImageByID (GetImageByIDRequest) returns (GetImageByIDResponse);
+    rpc DeleteImage (DeleteImageRequest) returns (DeleteImageResponse);
+}
+
+message Image {
+    string image_id = 1;
+    string profile_id = 2;
+    string avatar_url = 3;
+    string bio = 4;
+    float rating = 5;
+    repeated Review reviews = 6;
+}
+
+message CreateImageRequest {
+    string profile_id = 1;
+    string avatar_url = 2;
+    string bio = 3;
+    float rating = 4;
+    repeated Review reviews = 5;
+}
+
+message CreateImageResponse {
+    string image_id = 1;
+}
+
+message UpdateImageRequest {
+    string image_id = 1;
+    Image image = 2;
+    google.protobuf.FieldMask update_mask = 3;
+}
+
+message UpdateImageResponse {
+    Image image = 1;
+}
+
+message GetImageByIDRequest {
+    string image_id = 1;
+}
+
+message GetImageByIDResponse {
+    Image image = 1;
+}
+
+message DeleteImageRequest {
+    string image_id = 1;
+}
+
+message DeleteImageResponse {
+    Image image = 1;
+}
+
+service ReviewService {
+    rpc CreateReview (CreateReviewRequest) returns (CreateReviewResponse);
+    rpc UpdateReview (UpdateReviewRequest) returns (UpdateReviewResponse);
+    rpc GetReviewByID (GetReviewByIDRequest) returns (GetReviewByIDResponse);
+    rpc DeleteReview (DeleteReviewRequest) returns (DeleteReviewResponse);
+}
+
+message Review {
+    string id = 1;
+    string image_id = 2;
+    string user_id = 3;
+    string text = 4;
+}
+
+message CreateReviewRequest {
+    string image_id = 1;
+    string user_id = 2;
+    string text = 3;
+}
+
+message CreateReviewResponse {
+    string review_id = 1;
+}
+
+message UpdateReviewRequest {
+    string review_id = 1;
+    Review review = 2;
+    google.protobuf.FieldMask update_mask = 3;
+}
+
+message UpdateReviewResponse {
+    Review review = 1;
+}
+
+message GetReviewByIDRequest {
+    string review_id = 1;
+}
+
+message GetReviewByIDResponse {
+    Review review = 2;
+}
+
+message DeleteReviewRequest {
+    string review_id = 1;
+}
+
+message DeleteReviewResponse {
+    Review review = 1;
+}
