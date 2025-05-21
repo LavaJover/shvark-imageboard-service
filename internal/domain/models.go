@@ -1,10 +1,10 @@
 package domain
 
 type Image struct {
-	ID			string
-	ProfileID	string
-	AvatarUrl	string
-	Bio			string
+	ID			string	
+	ProfileID	string	
+	AvatarUrl	string	
+	Bio			string	
 	Rating		float32
 	Tags		[]string
 	Reviews		[]Review
@@ -12,7 +12,7 @@ type Image struct {
 
 type Review struct {
 	ID		string
-	ImageID	string
-	UserID	string
+	ImageID	string	
+	UserID	string	
 	Text	string
 }

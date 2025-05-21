@@ -17,7 +17,6 @@ message Image {
     string avatar_url = 3;
     string bio = 4;
     float rating = 5;
-    repeated Review reviews = 6;
 }
 
 message CreateImageRequest {
@@ -25,7 +24,6 @@ message CreateImageRequest {
     string avatar_url = 2;
     string bio = 3;
     float rating = 4;
-    repeated Review reviews = 5;
 }
 
 message CreateImageResponse {
