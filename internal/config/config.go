@@ -9,7 +9,7 @@ import (
 type ImageboardConfig struct {
 	Env string 		`yaml:"env"`
 	GRPCServer 		`yaml:"grpc_server"`
-	ImageboardDB 	`yaml:"Imageboard_db"`
+	ImageboardDB 	`yaml:"imageboard_db"`
 	LogConfig 		`yaml:"log_config"`
 }
 

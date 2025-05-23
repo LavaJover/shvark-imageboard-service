@@ -37,7 +37,11 @@ message UpdateImageRequest {
 }
 
 message UpdateImageResponse {
-    Image image = 1;
+    string image_id = 1;
+    string profile_id = 2;
+    string avatar_url = 3;
+    string bio = 4;
+    float rating = 5;
 }
 
 message GetImageByIDRequest {
@@ -45,7 +49,11 @@ message GetImageByIDRequest {
 }
 
 message GetImageByIDResponse {
-    Image image = 1;
+    string image_id = 1;
+    string profile_id = 2;
+    string avatar_url = 3;
+    string bio = 4;
+    float rating = 5;
 }
 
 message DeleteImageRequest {
@@ -53,7 +61,11 @@ message DeleteImageRequest {
 }
 
 message DeleteImageResponse {
-    Image image = 1;
+    string image_id = 1;
+    string profile_id = 2;
+    string avatar_url = 3;
+    string bio = 4;
+    float rating = 5;
 }
 
 service ReviewService {

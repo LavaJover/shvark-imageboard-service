@@ -15,7 +15,7 @@ func MustInitDB(cfg *config.ImageboardConfig) *gorm.DB {
 		log.Fatalf("failed to init db: %v\n", err)
 	}
 
-	db.AutoMigrate(&ReviewModel{}, &ImageModel{})
+	db.AutoMigrate(&ImageModel{}, &ReviewModel{})
 
 	return db
 }

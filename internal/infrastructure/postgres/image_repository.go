@@ -42,7 +42,6 @@ func (r *DefaultImageRepository) CreateImage(image *domain.Image) (*domain.Image
 		AvatarUrl: image.AvatarUrl,
 		Bio: image.Bio,
 		Rating: image.Rating,
-		Tags: image.Tags,
 		Reviews: reviews,
 	}
 	if err := r.ImageDB.Create(imageModel).Error; err != nil {
@@ -86,7 +85,6 @@ func (r *DefaultImageRepository) UpdateImage(imageID string, image *domain.Image
 		AvatarUrl: imageModel.AvatarUrl,
 		Bio: imageModel.Bio,
 		Rating: imageModel.Rating,
-		Tags: imageModel.Tags,
 		Reviews: ReviewModelsToDomain(imageModel.Reviews),
 	}, nil
 }
@@ -110,7 +108,6 @@ func (r *DefaultImageRepository) DeleteImage(imageID string) (*domain.Image, err
 		AvatarUrl: imageModel.AvatarUrl,
 		Bio: imageModel.Bio,
 		Rating: imageModel.Rating,
-		Tags: imageModel.Tags,
 		Reviews: ReviewModelsToDomain(imageModel.Reviews),
 	}, nil
 }
@@ -130,7 +127,6 @@ func (r *DefaultImageRepository) GetImageByID(imageID string) (*domain.Image, er
 		AvatarUrl: imageModel.AvatarUrl,
 		Bio: imageModel.Bio,
 		Rating: imageModel.Rating,
-		Tags: imageModel.Tags,
 		Reviews: ReviewModelsToDomain(imageModel.Reviews),
 	}, nil
 }

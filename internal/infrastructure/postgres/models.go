@@ -6,9 +6,10 @@ type ImageModel struct {
 	AvatarUrl	string	
 	Bio			string	
 	Rating		float32
-	Tags		[]string
+	Tags		string
 	Reviews		[]ReviewModel	`gorm:"foreignKey:ImageID;references:ID"`
 }
+
 
 type ReviewModel struct {
 	ID		string	`gorm:"type:uuid;primaryKey"`

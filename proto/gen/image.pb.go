@@ -272,7 +272,11 @@ func (x *UpdateImageRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 
 type UpdateImageResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Image         *Image                 `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
+	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,3,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Bio           string                 `protobuf:"bytes,4,opt,name=bio,proto3" json:"bio,omitempty"`
+	Rating        float32                `protobuf:"fixed32,5,opt,name=rating,proto3" json:"rating,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -307,11 +311,39 @@ func (*UpdateImageResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *UpdateImageResponse) GetImage() *Image {
+func (x *UpdateImageResponse) GetImageId() string {
 	if x != nil {
-		return x.Image
+		return x.ImageId
 	}
-	return nil
+	return ""
+}
+
+func (x *UpdateImageResponse) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *UpdateImageResponse) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *UpdateImageResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *UpdateImageResponse) GetRating() float32 {
+	if x != nil {
+		return x.Rating
+	}
+	return 0
 }
 
 type GetImageByIDRequest struct {
@@ -360,7 +392,11 @@ func (x *GetImageByIDRequest) GetImageId() string {
 
 type GetImageByIDResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Image         *Image                 `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
+	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,3,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Bio           string                 `protobuf:"bytes,4,opt,name=bio,proto3" json:"bio,omitempty"`
+	Rating        float32                `protobuf:"fixed32,5,opt,name=rating,proto3" json:"rating,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -395,11 +431,39 @@ func (*GetImageByIDResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetImageByIDResponse) GetImage() *Image {
+func (x *GetImageByIDResponse) GetImageId() string {
 	if x != nil {
-		return x.Image
+		return x.ImageId
 	}
-	return nil
+	return ""
+}
+
+func (x *GetImageByIDResponse) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *GetImageByIDResponse) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *GetImageByIDResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *GetImageByIDResponse) GetRating() float32 {
+	if x != nil {
+		return x.Rating
+	}
+	return 0
 }
 
 type DeleteImageRequest struct {
@@ -448,7 +512,11 @@ func (x *DeleteImageRequest) GetImageId() string {
 
 type DeleteImageResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Image         *Image                 `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
+	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	AvatarUrl     string                 `protobuf:"bytes,3,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Bio           string                 `protobuf:"bytes,4,opt,name=bio,proto3" json:"bio,omitempty"`
+	Rating        float32                `protobuf:"fixed32,5,opt,name=rating,proto3" json:"rating,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -483,11 +551,39 @@ func (*DeleteImageResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *DeleteImageResponse) GetImage() *Image {
+func (x *DeleteImageResponse) GetImageId() string {
 	if x != nil {
-		return x.Image
+		return x.ImageId
 	}
-	return nil
+	return ""
+}
+
+func (x *DeleteImageResponse) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *DeleteImageResponse) GetAvatarUrl() string {
+	if x != nil {
+		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *DeleteImageResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *DeleteImageResponse) GetRating() float32 {
+	if x != nil {
+		return x.Rating
+	}
+	return 0
 }
 
 type Review struct {
@@ -968,17 +1064,35 @@ const file_image_proto_rawDesc = "" +
 	"\bimage_id\x18\x01 \x01(\tR\aimageId\x12\x1c\n" +
 	"\x05image\x18\x02 \x01(\v2\x06.ImageR\x05image\x12;\n" +
 	"\vupdate_mask\x18\x03 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
-	"updateMask\"3\n" +
-	"\x13UpdateImageResponse\x12\x1c\n" +
-	"\x05image\x18\x01 \x01(\v2\x06.ImageR\x05image\"0\n" +
+	"updateMask\"\x98\x01\n" +
+	"\x13UpdateImageResponse\x12\x19\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\x12\x10\n" +
+	"\x03bio\x18\x04 \x01(\tR\x03bio\x12\x16\n" +
+	"\x06rating\x18\x05 \x01(\x02R\x06rating\"0\n" +
 	"\x13GetImageByIDRequest\x12\x19\n" +
-	"\bimage_id\x18\x01 \x01(\tR\aimageId\"4\n" +
-	"\x14GetImageByIDResponse\x12\x1c\n" +
-	"\x05image\x18\x01 \x01(\v2\x06.ImageR\x05image\"/\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\"\x99\x01\n" +
+	"\x14GetImageByIDResponse\x12\x19\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\x12\x10\n" +
+	"\x03bio\x18\x04 \x01(\tR\x03bio\x12\x16\n" +
+	"\x06rating\x18\x05 \x01(\x02R\x06rating\"/\n" +
 	"\x12DeleteImageRequest\x12\x19\n" +
-	"\bimage_id\x18\x01 \x01(\tR\aimageId\"3\n" +
-	"\x13DeleteImageResponse\x12\x1c\n" +
-	"\x05image\x18\x01 \x01(\v2\x06.ImageR\x05image\"`\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\"\x98\x01\n" +
+	"\x13DeleteImageResponse\x12\x19\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x1d\n" +
+	"\n" +
+	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\x12\x10\n" +
+	"\x03bio\x18\x04 \x01(\tR\x03bio\x12\x16\n" +
+	"\x06rating\x18\x05 \x01(\x02R\x06rating\"`\n" +
 	"\x06Review\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bimage_id\x18\x02 \x01(\tR\aimageId\x12\x17\n" +
@@ -1053,35 +1167,32 @@ var file_image_proto_goTypes = []any{
 var file_image_proto_depIdxs = []int32{
 	0,  // 0: UpdateImageRequest.image:type_name -> Image
 	18, // 1: UpdateImageRequest.update_mask:type_name -> google.protobuf.FieldMask
-	0,  // 2: UpdateImageResponse.image:type_name -> Image
-	0,  // 3: GetImageByIDResponse.image:type_name -> Image
-	0,  // 4: DeleteImageResponse.image:type_name -> Image
-	9,  // 5: UpdateReviewRequest.review:type_name -> Review
-	18, // 6: UpdateReviewRequest.update_mask:type_name -> google.protobuf.FieldMask
-	9,  // 7: UpdateReviewResponse.review:type_name -> Review
-	9,  // 8: GetReviewByIDResponse.review:type_name -> Review
-	9,  // 9: DeleteReviewResponse.review:type_name -> Review
-	1,  // 10: ImageService.CreateImage:input_type -> CreateImageRequest
-	3,  // 11: ImageService.UpdateImage:input_type -> UpdateImageRequest
-	5,  // 12: ImageService.GetImageByID:input_type -> GetImageByIDRequest
-	7,  // 13: ImageService.DeleteImage:input_type -> DeleteImageRequest
-	10, // 14: ReviewService.CreateReview:input_type -> CreateReviewRequest
-	12, // 15: ReviewService.UpdateReview:input_type -> UpdateReviewRequest
-	14, // 16: ReviewService.GetReviewByID:input_type -> GetReviewByIDRequest
-	16, // 17: ReviewService.DeleteReview:input_type -> DeleteReviewRequest
-	2,  // 18: ImageService.CreateImage:output_type -> CreateImageResponse
-	4,  // 19: ImageService.UpdateImage:output_type -> UpdateImageResponse
-	6,  // 20: ImageService.GetImageByID:output_type -> GetImageByIDResponse
-	8,  // 21: ImageService.DeleteImage:output_type -> DeleteImageResponse
-	11, // 22: ReviewService.CreateReview:output_type -> CreateReviewResponse
-	13, // 23: ReviewService.UpdateReview:output_type -> UpdateReviewResponse
-	15, // 24: ReviewService.GetReviewByID:output_type -> GetReviewByIDResponse
-	17, // 25: ReviewService.DeleteReview:output_type -> DeleteReviewResponse
-	18, // [18:26] is the sub-list for method output_type
-	10, // [10:18] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	9,  // 2: UpdateReviewRequest.review:type_name -> Review
+	18, // 3: UpdateReviewRequest.update_mask:type_name -> google.protobuf.FieldMask
+	9,  // 4: UpdateReviewResponse.review:type_name -> Review
+	9,  // 5: GetReviewByIDResponse.review:type_name -> Review
+	9,  // 6: DeleteReviewResponse.review:type_name -> Review
+	1,  // 7: ImageService.CreateImage:input_type -> CreateImageRequest
+	3,  // 8: ImageService.UpdateImage:input_type -> UpdateImageRequest
+	5,  // 9: ImageService.GetImageByID:input_type -> GetImageByIDRequest
+	7,  // 10: ImageService.DeleteImage:input_type -> DeleteImageRequest
+	10, // 11: ReviewService.CreateReview:input_type -> CreateReviewRequest
+	12, // 12: ReviewService.UpdateReview:input_type -> UpdateReviewRequest
+	14, // 13: ReviewService.GetReviewByID:input_type -> GetReviewByIDRequest
+	16, // 14: ReviewService.DeleteReview:input_type -> DeleteReviewRequest
+	2,  // 15: ImageService.CreateImage:output_type -> CreateImageResponse
+	4,  // 16: ImageService.UpdateImage:output_type -> UpdateImageResponse
+	6,  // 17: ImageService.GetImageByID:output_type -> GetImageByIDResponse
+	8,  // 18: ImageService.DeleteImage:output_type -> DeleteImageResponse
+	11, // 19: ReviewService.CreateReview:output_type -> CreateReviewResponse
+	13, // 20: ReviewService.UpdateReview:output_type -> UpdateReviewResponse
+	15, // 21: ReviewService.GetReviewByID:output_type -> GetReviewByIDResponse
+	17, // 22: ReviewService.DeleteReview:output_type -> DeleteReviewResponse
+	15, // [15:23] is the sub-list for method output_type
+	7,  // [7:15] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_image_proto_init() }
