@@ -99,7 +99,10 @@ message UpdateReviewRequest {
 }
 
 message UpdateReviewResponse {
-    Review review = 1;
+    string id = 1;
+    string image_id = 2;
+    string user_id = 3;
+    string text = 4;
 }
 
 message GetReviewByIDRequest {
@@ -107,7 +110,10 @@ message GetReviewByIDRequest {
 }
 
 message GetReviewByIDResponse {
-    Review review = 2;
+    string id = 1;
+    string image_id = 2;
+    string user_id = 3;
+    string text = 4;
 }
 
 message DeleteReviewRequest {
@@ -115,5 +121,8 @@ message DeleteReviewRequest {
 }
 
 message DeleteReviewResponse {
-    Review review = 1;
+    string id = 1;
+    string image_id = 2;
+    string user_id = 3;
+    string text = 4;
 }

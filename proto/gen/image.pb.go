@@ -820,7 +820,10 @@ func (x *UpdateReviewRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 
 type UpdateReviewResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Review        *Review                `protobuf:"bytes,1,opt,name=review,proto3" json:"review,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ImageId       string                 `protobuf:"bytes,2,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	UserId        string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Text          string                 `protobuf:"bytes,4,opt,name=text,proto3" json:"text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -855,11 +858,32 @@ func (*UpdateReviewResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *UpdateReviewResponse) GetReview() *Review {
+func (x *UpdateReviewResponse) GetId() string {
 	if x != nil {
-		return x.Review
+		return x.Id
 	}
-	return nil
+	return ""
+}
+
+func (x *UpdateReviewResponse) GetImageId() string {
+	if x != nil {
+		return x.ImageId
+	}
+	return ""
+}
+
+func (x *UpdateReviewResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UpdateReviewResponse) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
 }
 
 type GetReviewByIDRequest struct {
@@ -908,7 +932,10 @@ func (x *GetReviewByIDRequest) GetReviewId() string {
 
 type GetReviewByIDResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Review        *Review                `protobuf:"bytes,2,opt,name=review,proto3" json:"review,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ImageId       string                 `protobuf:"bytes,2,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	UserId        string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Text          string                 `protobuf:"bytes,4,opt,name=text,proto3" json:"text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -943,11 +970,32 @@ func (*GetReviewByIDResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *GetReviewByIDResponse) GetReview() *Review {
+func (x *GetReviewByIDResponse) GetId() string {
 	if x != nil {
-		return x.Review
+		return x.Id
 	}
-	return nil
+	return ""
+}
+
+func (x *GetReviewByIDResponse) GetImageId() string {
+	if x != nil {
+		return x.ImageId
+	}
+	return ""
+}
+
+func (x *GetReviewByIDResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetReviewByIDResponse) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
 }
 
 type DeleteReviewRequest struct {
@@ -996,7 +1044,10 @@ func (x *DeleteReviewRequest) GetReviewId() string {
 
 type DeleteReviewResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Review        *Review                `protobuf:"bytes,1,opt,name=review,proto3" json:"review,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ImageId       string                 `protobuf:"bytes,2,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
+	UserId        string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Text          string                 `protobuf:"bytes,4,opt,name=text,proto3" json:"text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1031,11 +1082,32 @@ func (*DeleteReviewResponse) Descriptor() ([]byte, []int) {
 	return file_image_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *DeleteReviewResponse) GetReview() *Review {
+func (x *DeleteReviewResponse) GetId() string {
 	if x != nil {
-		return x.Review
+		return x.Id
 	}
-	return nil
+	return ""
+}
+
+func (x *DeleteReviewResponse) GetImageId() string {
+	if x != nil {
+		return x.ImageId
+	}
+	return ""
+}
+
+func (x *DeleteReviewResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DeleteReviewResponse) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
 }
 
 var File_image_proto protoreflect.FileDescriptor
@@ -1108,17 +1180,26 @@ const file_image_proto_rawDesc = "" +
 	"\treview_id\x18\x01 \x01(\tR\breviewId\x12\x1f\n" +
 	"\x06review\x18\x02 \x01(\v2\a.ReviewR\x06review\x12;\n" +
 	"\vupdate_mask\x18\x03 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
-	"updateMask\"7\n" +
-	"\x14UpdateReviewResponse\x12\x1f\n" +
-	"\x06review\x18\x01 \x01(\v2\a.ReviewR\x06review\"3\n" +
+	"updateMask\"n\n" +
+	"\x14UpdateReviewResponse\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\bimage_id\x18\x02 \x01(\tR\aimageId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04text\x18\x04 \x01(\tR\x04text\"3\n" +
 	"\x14GetReviewByIDRequest\x12\x1b\n" +
-	"\treview_id\x18\x01 \x01(\tR\breviewId\"8\n" +
-	"\x15GetReviewByIDResponse\x12\x1f\n" +
-	"\x06review\x18\x02 \x01(\v2\a.ReviewR\x06review\"2\n" +
+	"\treview_id\x18\x01 \x01(\tR\breviewId\"o\n" +
+	"\x15GetReviewByIDResponse\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\bimage_id\x18\x02 \x01(\tR\aimageId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04text\x18\x04 \x01(\tR\x04text\"2\n" +
 	"\x13DeleteReviewRequest\x12\x1b\n" +
-	"\treview_id\x18\x01 \x01(\tR\breviewId\"7\n" +
-	"\x14DeleteReviewResponse\x12\x1f\n" +
-	"\x06review\x18\x01 \x01(\v2\a.ReviewR\x06review2\xf9\x01\n" +
+	"\treview_id\x18\x01 \x01(\tR\breviewId\"n\n" +
+	"\x14DeleteReviewResponse\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\bimage_id\x18\x02 \x01(\tR\aimageId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04text\x18\x04 \x01(\tR\x04text2\xf9\x01\n" +
 	"\fImageService\x128\n" +
 	"\vCreateImage\x12\x13.CreateImageRequest\x1a\x14.CreateImageResponse\x128\n" +
 	"\vUpdateImage\x12\x13.UpdateImageRequest\x1a\x14.UpdateImageResponse\x12;\n" +
@@ -1169,30 +1250,27 @@ var file_image_proto_depIdxs = []int32{
 	18, // 1: UpdateImageRequest.update_mask:type_name -> google.protobuf.FieldMask
 	9,  // 2: UpdateReviewRequest.review:type_name -> Review
 	18, // 3: UpdateReviewRequest.update_mask:type_name -> google.protobuf.FieldMask
-	9,  // 4: UpdateReviewResponse.review:type_name -> Review
-	9,  // 5: GetReviewByIDResponse.review:type_name -> Review
-	9,  // 6: DeleteReviewResponse.review:type_name -> Review
-	1,  // 7: ImageService.CreateImage:input_type -> CreateImageRequest
-	3,  // 8: ImageService.UpdateImage:input_type -> UpdateImageRequest
-	5,  // 9: ImageService.GetImageByID:input_type -> GetImageByIDRequest
-	7,  // 10: ImageService.DeleteImage:input_type -> DeleteImageRequest
-	10, // 11: ReviewService.CreateReview:input_type -> CreateReviewRequest
-	12, // 12: ReviewService.UpdateReview:input_type -> UpdateReviewRequest
-	14, // 13: ReviewService.GetReviewByID:input_type -> GetReviewByIDRequest
-	16, // 14: ReviewService.DeleteReview:input_type -> DeleteReviewRequest
-	2,  // 15: ImageService.CreateImage:output_type -> CreateImageResponse
-	4,  // 16: ImageService.UpdateImage:output_type -> UpdateImageResponse
-	6,  // 17: ImageService.GetImageByID:output_type -> GetImageByIDResponse
-	8,  // 18: ImageService.DeleteImage:output_type -> DeleteImageResponse
-	11, // 19: ReviewService.CreateReview:output_type -> CreateReviewResponse
-	13, // 20: ReviewService.UpdateReview:output_type -> UpdateReviewResponse
-	15, // 21: ReviewService.GetReviewByID:output_type -> GetReviewByIDResponse
-	17, // 22: ReviewService.DeleteReview:output_type -> DeleteReviewResponse
-	15, // [15:23] is the sub-list for method output_type
-	7,  // [7:15] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	1,  // 4: ImageService.CreateImage:input_type -> CreateImageRequest
+	3,  // 5: ImageService.UpdateImage:input_type -> UpdateImageRequest
+	5,  // 6: ImageService.GetImageByID:input_type -> GetImageByIDRequest
+	7,  // 7: ImageService.DeleteImage:input_type -> DeleteImageRequest
+	10, // 8: ReviewService.CreateReview:input_type -> CreateReviewRequest
+	12, // 9: ReviewService.UpdateReview:input_type -> UpdateReviewRequest
+	14, // 10: ReviewService.GetReviewByID:input_type -> GetReviewByIDRequest
+	16, // 11: ReviewService.DeleteReview:input_type -> DeleteReviewRequest
+	2,  // 12: ImageService.CreateImage:output_type -> CreateImageResponse
+	4,  // 13: ImageService.UpdateImage:output_type -> UpdateImageResponse
+	6,  // 14: ImageService.GetImageByID:output_type -> GetImageByIDResponse
+	8,  // 15: ImageService.DeleteImage:output_type -> DeleteImageResponse
+	11, // 16: ReviewService.CreateReview:output_type -> CreateReviewResponse
+	13, // 17: ReviewService.UpdateReview:output_type -> UpdateReviewResponse
+	15, // 18: ReviewService.GetReviewByID:output_type -> GetReviewByIDResponse
+	17, // 19: ReviewService.DeleteReview:output_type -> DeleteReviewResponse
+	12, // [12:20] is the sub-list for method output_type
+	4,  // [4:12] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_image_proto_init() }

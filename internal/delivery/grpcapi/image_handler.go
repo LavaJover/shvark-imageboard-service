@@ -10,7 +10,7 @@ import (
 
 type ImageHandler struct {
 	imagepb.UnimplementedImageServiceServer
-	Uc usecase.DefaultImageUsecase
+	Uc *usecase.DefaultImageUsecase
 }
 
 func (h *ImageHandler) CreateImage(ctx context.Context, r *imagepb.CreateImageRequest) (*imagepb.CreateImageResponse, error) {

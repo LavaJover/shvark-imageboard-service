@@ -20,17 +20,24 @@ func main() {
 	db := postgres.MustInitDB(cfg)
 
 	// Init image repo
-	imageRepo := postgres.DefaultImageRepository{db}
+	imageRepo := postgres.DefaultImageRepository{ImageDB: db}
 
-	// Init user usecase
-	uc := usecase.DefaultImageUsecase{&imageRepo}
+	// Init review repo
+	reviewRepo := postgres.DefaultReviewRepository{ReviewDB: db}
+
+	// Init image usecase
+	ucImage := usecase.DefaultImageUsecase{&imageRepo}
+
+	// Init review repo
+	ucReview := usecase.DefaultReviewUsecase{&reviewRepo}
 
 	// Creating gRPC server
 	grpcServer := grpc.NewServer()
-	userHandler := grpcapi.ImageHandler{Uc: uc}
+	imageHandler := grpcapi.ImageHandler{Uc: &ucImage}
+	reviewHandler := grpcapi.ReviewHandler{Uc: &ucReview}
 
-	imagepb.RegisterImageServiceServer(grpcServer, &userHandler)
-
+	imagepb.RegisterImageServiceServer(grpcServer, &imageHandler)
+	imagepb.RegisterReviewServiceServer(grpcServer, &reviewHandler)
 	// Start
 	lis, err := net.Listen("tcp", ":"+cfg.Port)
 	if err != nil{
